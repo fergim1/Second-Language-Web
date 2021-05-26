@@ -108,6 +108,7 @@ border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
+color: #fff;
 
 &:hover {
     transition: all 0.2s ease-in-out;
