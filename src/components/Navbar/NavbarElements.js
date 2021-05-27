@@ -6,7 +6,7 @@ import { Link as LinkS } from 'react-scroll';
 export const Nav = styled.nav`
 background: #000;
 height: 80px;
-/* margin-top: -80px; */
+margin-top: -80px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -70,50 +70,49 @@ export const NavMenu = styled.ul`
 `
 
 export const NavItem = styled.li`
-height: 80px;
-
+  height: 80px;
 `
 
 export const NavLinks = styled(LinkS)`
-color: #fff;
-display: flex;
-align-items: center;
-text-decoration: none;
-padding: 0 1rem;
-height: 100%;
-cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
 
-&.active {
-    border-bottom: 3px solid #01bf71;
-}
+  &:active {
+      border-bottom: 3 px solid #01bf71;
+  }
 `
 export const NavBtn = styled.nav`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 
-@media screen and (max-width: 768px) {
-    display: none;
-  }
+  @media screen and (max-width: 768px) {
+      display: none;
+    }
 
 `
 export const NavBtnLink = styled.nav`
-border-radius: 50px;
-background: #01bf71;
-white-space: nowrap;
-padding: 10px 22px;
-color: #010686;
-font-size: 16px;
-outline: none;
-border: none;
-cursor: pointer;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
-color: #fff;
+  border-radius: 50px;
+  background: #01Bf71;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010686;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: #fff;
 
-&:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
-    
-}
+  &:hover {
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+      color: #010606;
+      
+  }
 `
