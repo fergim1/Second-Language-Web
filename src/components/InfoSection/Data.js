@@ -4,28 +4,28 @@ import svg3 from '../../images/svg-3.svg'
 
 
 export const homeObjOne = {
-    id: 'about',
-    lightBg: false,
-    lightText: true,
+    id: 'us',
+    lightBg: true,
+    lightText: false,
     lightTextDesc: true,
-    topLine: 'Premium Bank',
-    headline: 'Unlimited Transactions with zero fees',
-    description: 'Get acces to our exclusive app that allows you to send unlimited transaction without getting charged any fees',
+    topLine: 'Us',
+    headline: 'We provide tools for language teachers',
+    description: 'We offer a real connection with Native Speakers through Live Virtual Tours, Cultural and Gastronomic Experiences, Language Immersion Programs and customizable talks about different topics. Our goal is to make an outstanding complement for your English or Spanish Class.',
     buttonLabel: 'Get started',
     imgStart: false,
     img: svg1,
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: true
 } 
 
 
 export const homeObjTwo = {
     id: 'discover',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: true,
     topLine: 'Unlomited Access',
     headline: 'Login to your account at any time',
     description: 'We have you covered no matter where you are located. All you need is an internet connection and a phone or computer',
@@ -41,9 +41,9 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
     id: 'signup',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: true,
     topLine: 'Join our Team',
     headline: 'Creating an account is extremely easy',
     description: 'Get everything set up and ready in under 10 minutes. All you need to do is add your information and you are ready to go',
@@ -51,7 +51,7 @@ export const homeObjThree = {
     imgStart: false,
     img: svg3,
     alt: 'Paper',
-    dark: false,
-    primary: false,
+    dark: true,
+    primary: true,
     darkText: true
 } 

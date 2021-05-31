@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Footer } from '../components/Footer'
-import { Herosection } from '../components/HeroSection'
+import { HomeSection } from '../components/HomeSection'
 import { InfoSection } from '../components/InfoSection'
 import { homeObjOne, homeObjThree, homeObjTwo } from '../components/InfoSection/Data'
 import { Navbar } from '../components/Navbar'
-import { Services } from '../components/Services'
+import { ExperiencesSection } from '../components/Experiences'
 import { Sidebar } from '../components/Sidebar'
+import { ContactSection } from '../components/ContactSection'
+import { WhatsappButton } from '../components/Whatsapp'
 
 export const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -18,11 +20,13 @@ export const Home = () => {
         <>
             <Sidebar isOpen={ isOpen } toggle={ toggle }/>
             <Navbar toggle={ toggle }/>
-            <Herosection/>
+            <HomeSection/>
             <InfoSection {...homeObjOne}/>
             <InfoSection {...homeObjTwo}/>
-            <Services/>
+            <ExperiencesSection/>
             <InfoSection {...homeObjThree}/>
+            <ContactSection/>
+            <WhatsappButton/>
             <Footer/>
     
         </>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons'
 import { animateScroll as scroll } from 'react-scroll'
+import imgLogo from '../../images/logo-blanco.png'
 import {
     Nav,
     NavbarContainer,
@@ -11,7 +12,8 @@ import {
     NavItem,
     NavLinks,
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    NavImgLogo
   } from './NavbarElements';
 
 export const Navbar = ({ toggle }) => {
@@ -42,21 +44,23 @@ export const Navbar = ({ toggle }) => {
         <>
         <IconContext.Provider value={{color: '#fff'}}>
             <Nav scrollNav= { scrollNav }>
-                <NavbarContainer>
-                    <NavLogo to='/' onClick={ toggleHome }> dolla </NavLogo>
+                <NavbarContainer>                    
+                    <NavLogo to='/' onClick={ toggleHome }> 
+                        <NavImgLogo src={imgLogo} />
+                    </NavLogo>
                     <MobileIcon onClick={ toggle }>
                         <FaBars/>
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to='about'
+                            <NavLinks to='us'
                                 smooth={true}
                                 duration={500}
                                 spy={true}
                                 exact='true'
                                 offset={-80}
                             >
-                                About
+                                Us
                             </NavLinks>
                         </NavItem>
                         <NavItem>
@@ -71,18 +75,18 @@ export const Navbar = ({ toggle }) => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='services'
+                            <NavLinks to='experiences'
                                 smooth={true}
                                 duration={500}
                                 spy={true}
                                 exact='true'
                                 offset={-80}
                             >
-                                Services
+                                Experiences
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='signup'
+                            {/* <NavLinks to='signup'
                                 smooth={true}
                                 duration={500}
                                 spy={true}
@@ -90,6 +94,15 @@ export const Navbar = ({ toggle }) => {
                                 offset={-80}
                              >
                                  Sign Up
+                            </NavLinks> */}
+                            <NavLinks to='contact'
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                             >
+                                 Contact
                             </NavLinks>
                         </NavItem>
                     </NavMenu>
