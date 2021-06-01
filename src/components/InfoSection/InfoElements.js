@@ -7,6 +7,10 @@
     @media screen and (max-width: 768px) {
         padding: 100px 0;
     }
+
+    @media screen and (max-width: 450px) {
+        padding: 0;
+    }
   `
 
   export const InfoWrapper = styled.div`

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
+import { RiInstagramFill } from 'react-icons/ri'
 
 
 export const Nav = styled.nav`
@@ -23,6 +24,7 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -53,7 +55,7 @@ export const MobileIcon = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    transform: translate(-100%, 40%);
     font-size: 1.8rem;
     cursor: pointer; 
     color: #fff;
@@ -65,6 +67,7 @@ export const NavMenu = styled.ul`
   /* align-items: center; */
   text-align: center;
   margin-right: -22px;
+  margin-bottom: 0;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -102,24 +105,55 @@ export const NavBtn = styled.nav`
     }
 
 `
-export const NavBtnLink = styled(LinkR)`
-  border-radius: 50px;
+// export const NavBtnLink = styled(LinkR)`
+//   border-radius: 50px;
+//   background: #fc0071;
+//   white-space: nowrap;
+//   padding: 10px 22px;
+//   color: #010686;
+//   font-size: 16px;
+//   outline: none;
+//   border: none;
+//   cursor: pointer;
+//   transition: all 0.2s ease-in-out;
+//   text-decoration: none;
+//   color: #fff;
+
+//   &:hover {
+//       transition: all 0.2s ease-in-out;
+//       background: #fff;
+//       color: #1b007b;
+      
+//   }
+// `
+
+
+export const BtnInstragram = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #fc0071;
-  white-space: nowrap;
-  padding: 10px 22px;
-  color: #010686;
-  font-size: 16px;
-  outline: none;
-  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  color: #fff;
 
   &:hover {
-      transition: all 0.2s ease-in-out;
-      background: #fff;
-      color: #1b007b;
-      
+    background: #CD1467;
   }
+
+  @media screen and (max-width: 768px) {
+      display: none;
+    }
+`
+
+export const IconInstagram = styled(RiInstagramFill)`
+  font-size: 25px;
+  color: white;
+  &:hover {
+    color: #DAD9D9;
+    
+  }
+  
 `

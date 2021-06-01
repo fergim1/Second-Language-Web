@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { IconContext } from 'react-icons'
 import { animateScroll as scroll } from 'react-scroll'
 import imgLogo from '../../images/logo-blanco.png'
 import {
@@ -11,9 +10,9 @@ import {
     NavMenu,
     NavItem,
     NavLinks,
-    NavBtn,
-    NavBtnLink,
-    NavImgLogo
+    NavImgLogo,
+    BtnInstragram,
+    IconInstagram
   } from './NavbarElements';
 
 export const Navbar = ({ toggle }) => {
@@ -42,7 +41,6 @@ export const Navbar = ({ toggle }) => {
 
     return (
         <>
-        <IconContext.Provider value={{color: '#fff'}}>
             <Nav scrollNav= { scrollNav }>
                 <NavbarContainer>                    
                     <NavLogo to='/' onClick={ toggleHome }> 
@@ -106,12 +104,11 @@ export const Navbar = ({ toggle }) => {
                             </NavLinks>
                         </NavItem>
                     </NavMenu>
-                    <NavBtn>
-                        <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-                    </NavBtn>
+                    <BtnInstragram href='https://www.instagram.com/secondlanguage.modeon/' target='_blank'>
+                            <IconInstagram/>
+                    </BtnInstragram>
                 </NavbarContainer>
             </Nav>
-            </IconContext.Provider>
         </>
     )
 }

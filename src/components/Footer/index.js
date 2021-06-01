@@ -1,6 +1,7 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaLinkedin } from 'react-icons/fa' 
+import { FaInstagram, FaLinkedin } from 'react-icons/fa' 
 import { animateScroll as scroll } from 'react-scroll';
+import imgLogo from '../../images/logo-blanco.png'
 import {
   FooterContainer,
   FooterWrap,
@@ -14,7 +15,8 @@ import {
   SocialLogo,
   WebsiteRights,
   SocialIcons,
-  SocialIconLink
+  SocialIconLink,
+  Logo
 } from "./FooterElements";
 
 export const Footer = () => {
@@ -68,32 +70,21 @@ export const Footer = () => {
         <SocialMedia>
             <SocialMediaWrap>
                 <SocialLogo to='/' onClick={toggleHome}>
-                    dolla
+                   <Logo src={imgLogo} alt=''/>
                 </SocialLogo>
-                <WebsiteRights>dolla © {new Date().getFullYear()} All rights reserved</WebsiteRights>
+
+                <WebsiteRights>Second language mode On © <br/> {new Date().getFullYear()} All rights reserved.</WebsiteRights>
+               
                 <SocialIcons>
-
-                    <SocialIconLink href='/' target='_blank' arial-label='Instagram'> 
+                    <SocialIconLink href='https://www.instagram.com/secondlanguage.modeon/' target='_blank' arial-label='Instagram'> 
                         <FaInstagram/>
-                    </SocialIconLink>
-
-                    <SocialIconLink href='/' target='_blank' arial-label='Facebook'> 
-                        <FaFacebook/>
-                    </SocialIconLink>
-
-                    <SocialIconLink href='/' target='_blank' arial-label='Youtube'> 
-                        <FaYoutube/>
-                    </SocialIconLink>
-
-                    <SocialIconLink href='/' target='_blank' arial-label='Twitter'> 
-                        <FaTwitter/>
                     </SocialIconLink>
 
                     <SocialIconLink href='/' target='_blank' arial-label='Linkedin'> 
                         <FaLinkedin/>
                     </SocialIconLink>
-
                 </SocialIcons>
+
             </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>
