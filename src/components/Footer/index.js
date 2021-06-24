@@ -1,23 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa' 
 import { animateScroll as scroll } from 'react-scroll';
 import imgLogo from '../../images/logo-blanco.png'
-import {
-  FooterContainer,
-  FooterWrap,
-  FooterLinksContainter,
-  FooterLinksWrapper,
-  FooterLinkItems,
-  FooterLinkTitle,
-  FooterLink,
-  SocialMedia,
-  SocialMediaWrap,
-  SocialLogo,
-  WebsiteRights,
-  SocialIcons,
-  SocialIconLink,
-  Logo
-} from "./FooterElements";
+
+
 
 export const Footer = () => {
 
@@ -26,68 +13,68 @@ export const Footer = () => {
 }
 
   return (
-    <FooterContainer>
-      <FooterWrap>
-        <FooterLinksContainter>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signin">How it works</FooterLink>
-              <FooterLink to="/signin">Testimonials</FooterLink>
-              <FooterLink to="/signin">Careers</FooterLink>
-              <FooterLink to="/signin">Investors</FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
-            </FooterLinkItems>
+    <footer className='footer-container'>
+      <div className='footer-wrapper'>
+        <div className='footer-links-container'>
+          <div className='footer-links-wrapper'>
+            <div className='footer-links-items'>
+              <h1 className='footer-link-title'>About us</h1>
+              <Link to="/signin" className='footer-link'>How it works</Link>
+              <Link to="/signin" className='footer-link'>Testimonials</Link>
+              <Link to="/signin" className='footer-link'>Careers</Link>
+              <Link to="/signin" className='footer-link'>Investors</Link>
+              <Link to="/signin" className='footer-link'>Terms of Service</Link>
+            </div>
 
-            <FooterLinkItems>
-              <FooterLinkTitle>Contact us</FooterLinkTitle>
-              <FooterLink to="/signin">Contact</FooterLink>
-              <FooterLink to="/signin">Support</FooterLink>
-              <FooterLink to="/signin">Destinations</FooterLink>
-              <FooterLink to="/signin">Spondorships</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
+            <div className='footer-links-items'>
+              <h1 className='footer-link-title'>Contact us</h1>
+              <Link to="/signin" className='footer-link'>Contact</Link>
+              <Link to="/signin" className='footer-link'>Support</Link>
+              <Link to="/signin" className='footer-link'>Destinations</Link>
+              <Link to="/signin" className='footer-link'>Spondorships</Link>
+            </div>
+          </div>
 
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>Videos</FooterLinkTitle>
-              <FooterLink to="/signin">Submit Video</FooterLink>
-              <FooterLink to="/signin">Ambassadors</FooterLink>
-              <FooterLink to="/signin">Agency</FooterLink>
-              <FooterLink to="/signin">Influencer</FooterLink>
-            </FooterLinkItems>
+          <div className='footer-links-wrapper'>
+            <div className='footer-links-items'>
+              <h1 className='footer-link-title'>Videos</h1>
+              <Link to="/signin" className='footer-link'>Submit Video</Link>
+              <Link to="/signin" className='footer-link'>Ambassadors</Link>
+              <Link to="/signin" className='footer-link'>Agency</Link>
+              <Link to="/signin" className='footer-link'>Influencer</Link>
+            </div>
 
-            <FooterLinkItems>
-              <FooterLinkTitle>Social Media</FooterLinkTitle>
-              <FooterLink to="/signin">instagram</FooterLink>
-              <FooterLink to="/signin">Facebook</FooterLink>
-              <FooterLink to="/signin">Youtube</FooterLink>
-              <FooterLink to="/signin">Twitter</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-        </FooterLinksContainter>
+            <div className='footer-links-items'>
+              <h1 className='footer-link-title'>Social Media</h1>
+              <Link to="/signin" className='footer-link'>instagram</Link>
+              <Link to="/signin" className='footer-link'>Facebook</Link>
+              <Link to="/signin" className='footer-link'>Youtube</Link>
+              <Link to="/signin" className='footer-link'>Twitter</Link>
+            </div>
+          </div>
+        </div>
         
-        <SocialMedia>
-            <SocialMediaWrap>
-                <SocialLogo to='/' onClick={toggleHome}>
-                   <Logo src={imgLogo} alt=''/>
-                </SocialLogo>
+        <section className='footer-social-media-section'>
+            <div className='footer-social-media-wrapper'>
+                <Link to='/' className='footer-link-logo' onClick={toggleHome}>
+                   <img src={imgLogo} alt='logo'className='footer-logo'/>
+                </Link>
 
-                <WebsiteRights>Second language mode On © <br/> {new Date().getFullYear()} All rights reserved.</WebsiteRights>
+                <small className='footer-website-rights'>Second language mode On © <br/> {new Date().getFullYear()} All rights reserved.</small>
                
-                <SocialIcons>
-                    <SocialIconLink href='https://www.instagram.com/secondlanguage.modeon/' target='_blank' arial-label='Instagram'> 
+                <div className='footer-wrapper-icons'>
+                    <a className='footer-link-icon' href='https://www.instagram.com/secondlanguage.modeon/' rel="noreferrer" target='_blank' arial-label='Instagram'> 
                         <FaInstagram/>
-                    </SocialIconLink>
+                    </a>
 
-                    <SocialIconLink href='/' target='_blank' arial-label='Linkedin'> 
+                    <a className='footer-link-icon' href='/' target='_blank' arial-label='Linkedin'> 
                         <FaLinkedin/>
-                    </SocialIconLink>
-                </SocialIcons>
+                    </a>
+                </div>
 
-            </SocialMediaWrap>
-        </SocialMedia>
-      </FooterWrap>
-    </FooterContainer>
+            </div>
+        </section>
+      </div>
+    </footer>
   );
 };

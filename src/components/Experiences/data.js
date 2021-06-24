@@ -12,11 +12,6 @@ import iguazu from '../../images/experiences/Iguazu.jpg'
 import mate from '../../images/experiences/mate.jpg'
 
 
-
-
-
-
-
 export const data = [
     {
         id: 1,

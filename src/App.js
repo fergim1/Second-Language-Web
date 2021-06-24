@@ -1,9 +1,11 @@
- import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Home } from './pages';
 import { SingInPage } from './pages/signin';
 import { useEffect } from 'react';
 import { animateScroll as scroll } from 'react-scroll'
+
+import './App.css';
+
 
 function App() {
 

@@ -1,43 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import imgBackground from '../../images/header-background.jpg'
-import { Button } from '../ButtonElement'
-import {
-    Container,
-    DivBackground,
-    ImgBackground,
-    Content,
-    H1,
-    P,
-    ButtonWrapper,
-    ArrowForward,
-    ArrowRight,
-    TopLine
-} from './HomeElements'
+import {Link as Button} from 'react-scroll';
+
 
 export const HomeSection = () => {
 
-    const [hover, setHover] = useState(false)
-
-    const onHover = () =>{
-        setHover(!hover)
-    }
     return (
-        <Container id='home'>
-            <DivBackground>
-                <ImgBackground src={ imgBackground } alt='header-backgrond' />
-            </DivBackground>
-            <Content>
-                <TopLine>Welcome</TopLine>
-                <H1>SECOND LANGUAGE MODE ON</H1>
-                <P>
-                    Resources for your English or Spanish class
-                    through Virtual live Experiences 
-                </P>
-                <ButtonWrapper>
+        <div className='home-container' id='home'>
+            
+            <div className='home-background'>
+                <img className='home-image-background' src={ imgBackground } alt='home-backgrond' />
+            </div>    
+
+            <div className='home-content'>
+
+                <p className='home-up-title'>VIRTUAL LIVE</p>
+                <h1 className='home-title'>EXPERIENCES</h1>
+    
                     <Button 
-                        to='signup' 
-                        onMouseEnter={ onHover } 
-                        onMouseLeave={ onHover }
+                        className='home-button'
+                        to='us' 
+                        // onMouseEnter={ onHover } 
+                        // onMouseLeave={ onHover }
                         primary='true'
                         dark='true'
                         smooth={true}
@@ -46,10 +30,9 @@ export const HomeSection = () => {
                         exact='true'
                         offset={-80}
                     >
-                        Get started {hover ? <ArrowForward/> : <ArrowRight/>}
+                        Know us
                     </Button>
-                </ButtonWrapper>
-            </Content>
-        </Container>
+            </div>
+        </div>
     )
 }

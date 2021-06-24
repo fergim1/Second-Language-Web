@@ -1,73 +1,80 @@
 import React from "react";
-import { 
-    SidebarContainer, 
-    Icon, 
-    CloseIcon, 
-    SidebarWrapper, 
-    SidebarMenu, 
-    SidebarLink,
-    SideBtnWrap,
-    SidebarRoute
+import { FaTimes } from 'react-icons/fa';
+import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkRouter } from 'react-router-dom';
 
-} from "./SidebarElements";
+
 
 export const Sidebar = ({ isOpen, toggle }) => {
   return (
-    <SidebarContainer isOpen={ isOpen } onClick={ toggle }>
-      <Icon onClick={ toggle }>
-        <CloseIcon />
-      </Icon>
-      <SidebarWrapper>
-        <SidebarMenu>
-          <SidebarLink to="us" 
-            onClick={ toggle }
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80}
-          >
-            Us
-          </SidebarLink>
+    <aside 
+      className={`sidebar-container ${isOpen && 'sidebar-container-is-open'}`}
+      isOpen={ isOpen } 
+      onClick={ toggle }
+    >
+      <div className='sidebar-wrapper-icon-close' onClick={ toggle }>
+        <FaTimes className='sidebar-icon-close' />
+      </div>
+      <div className='sidebar-wrapper'>
+          <ul className='sidebar-menu-ul'>
+            <LinkScroll to="us" 
+              className='sidebar-link-scroll'
+              onClick={ toggle }
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-80}
+            >
+              Us
+            </LinkScroll>
 
-          <SidebarLink to="discover" 
-            onClick={ toggle }
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80}
-          >
-            Discover
-          </SidebarLink>
-          
-          <SidebarLink to="experiences" 
-            onClick={ toggle }
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80}
-          >
-            Experiences
-          </SidebarLink>
+            <LinkScroll to="discover" 
+              className='sidebar-link-scroll'
+              onClick={ toggle }
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-80}
+            >
+              Discover
+            </LinkScroll>
+            
+            <LinkScroll to="experiences" 
+              className='sidebar-link-scroll'
+              onClick={ toggle }
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-80}
+            >
+              Experiences
+            </LinkScroll>
 
-          <SidebarLink to="contact" 
-            onClick={ toggle }
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-90}
-          >
-            Contact
-          </SidebarLink>
+            <LinkScroll to="contact" 
+              className='sidebar-link-scroll'
+              onClick={ toggle }
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-90}
+            >
+              Contact
+            </LinkScroll>
 
-        </SidebarMenu>
-        <SideBtnWrap>
-            <SidebarRoute to='/signin'>Sign In</SidebarRoute>
-        </SideBtnWrap>
-      </SidebarWrapper>
-    </SidebarContainer>
+          </ul>
+        <div className='sidebar-wrapper-button'>
+            <LinkRouter 
+              to='/signin'
+              className='sidebar-button'
+            >
+              Sign In
+            </LinkRouter>
+        </div>
+      </div>
+    </aside>
   );
 };

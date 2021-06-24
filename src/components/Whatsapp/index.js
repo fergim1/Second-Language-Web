@@ -1,15 +1,20 @@
 import React from "react";
-import { Whatsapp , IconWhatsapp} from './WhatsappElements';
+import { ImWhatsapp } from 'react-icons/im'
+
 
 export const WhatsappButton = () => {
   return (
     <>
-      <Whatsapp
+      <a 
+        className='whatsapp-link'
         href='https://wa.me/5491164838366'
         target="_blank"
+        rel="noreferrer"
       >
-        <IconWhatsapp/>
-      </Whatsapp>
+        <ImWhatsapp
+          className='whatsapp-icon'
+        />
+      </a>
     </>
   );
 };

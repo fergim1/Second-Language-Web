@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
+import { ImLocation, ImWhatsapp } from 'react-icons/im'
+import { FaEnvelope } from 'react-icons/fa'
 import emailjs from 'emailjs-com';
 import EmailSent from '../../images/mail-sent.svg'
-
-import {
-    ContactContainer, ContactWrapper, ContactRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle,
-    Form, FormInput, FormButton, FormTextArea, LocationWhatsappEmail, IconLocation, ImgEmailSent, ImgEmailContainer, 
-    TextEmailSent, IconWhatsapp, IconEmail, DivInfo, TextError
-} from './ContactElements'
 import { useForm } from '../../hooks/useForm';
 
 
@@ -43,60 +39,49 @@ export const ContactSection = () => {
     }
 
     return (
-        <>
-        <ContactContainer id='contact'>
-            <ContactWrapper>
-            <ContactRow >
-                <Column1>
-                <TextWrapper>
-                    <TopLine>Contact</TopLine>
-                    <Heading>Get In Touch</Heading>
-                    <Subtitle>Use the contact form for any questions and inquiries.</Subtitle>
-                    <LocationWhatsappEmail>
-                        <DivInfo>
-                            <IconLocation/>Argentina  -  Peru  -   England
-                        </DivInfo>
-                            <br></br>
-                        <DivInfo>
-                            <IconWhatsapp/> +549 116 483 8366
-                        </DivInfo>
-                            <br></br>
-                        <DivInfo>
-                            <IconEmail/> secondlanguagemodeon@gmail.com
-                        </DivInfo>
-                    </LocationWhatsappEmail>
-                </TextWrapper>
-                </Column1>
-                <Column2>
-                {
-                    !submited ?
+    <>
+        <div className='container contact-container' id='contact'>
+            <div className='row contact-row' >
+                <div className='col-12 col-md-6 contact-column-1'>
+                    <p className='contact-up-title-section'>Contact</p>
+                    <h1 className='contact-title-section'>Get In Touch</h1>
+                    <p className='contact-text'>Use the contact form for any questions and inquiries.</p>
+                    <p className='contact-text-info'>
+                        <ImLocation className='contact-icon'/>Argentina  -  Peru  -   England
+                        <br/>
+                        <ImWhatsapp className='contact-icon'/> +549 116 483 8366
+                        <br/>
+                        <FaEnvelope className='contact-icon'/> secondlanguagemodeon@gmail.com
+                    </p>
+                </div>
 
-                
-               ( 
-                <Form className="contact-form" onSubmit={sendEmail}>
-                    <FormInput type="text" name="name" placeholder='Name*' value={ name } onChange= { handleInputChange } />
-                    <FormInput type="text" name="country" placeholder='Country*' value={ country } onChange= { handleInputChange }/>
-                    <FormInput type="email" name="email" placeholder='Email*' value={ email } onChange= { handleInputChange }/>
-                    <FormTextArea name="message" placeholder='Message*' rows='4' value={ message } onChange= { handleInputChange }/>
-                    <FormButton type="submit" >Submit message</FormButton>
+                <div className='col-12 col-md-6 contact-column-2'>
                     {
-                        errors && <TextError>*All fields are required</TextError>
-                    }
-                </Form>
-                 )
+                        !submited 
+                    ?                    
+                        ( 
+                            <form className="contact-form" onSubmit={sendEmail}>
+                                <input className='contact-input' type="text" name="name" placeholder='Name*' value={ name } onChange= { handleInputChange } />
+                                <input className='contact-input' type="text" name="country" placeholder='Country*' value={ country } onChange= { handleInputChange }/>
+                                <input className='contact-input' type="email" name="email" placeholder='Email*' value={ email } onChange= { handleInputChange }/>
+                                <textarea className='contact-textarea' name="message" placeholder='Message*' rows='4' value={ message } onChange= { handleInputChange }/>
+                                <button className='contact-button' type="submit" >Submit message</button>
+                                {
+                                    errors && <small className='contact-error'>*All fields are required</small>
+                                }
+                            </form>
+                        )
+                        
+                    :
+                        <div className='contact-wrapper-img-email'>
+                            <img className='contact-img-email-sent' src={EmailSent} alt='Email sent!'/>
+                            <p className='contact-text-email-sent'>Message sent !</p>                
+                        </div>
                 
-                :
-                <ImgEmailContainer>
-                     <ImgEmailSent src={EmailSent}/>
-                     <TextEmailSent>Message sent !</TextEmailSent>                
-                </ImgEmailContainer>
-            
-                }
-                </Column2>
-            </ContactRow>
-            </ContactWrapper>
-      </ContactContainer>
-            
-        </>
+                    }
+                </div>
+            </div>
+        </div>        
+    </>
     )
 }

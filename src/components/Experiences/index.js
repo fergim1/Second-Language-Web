@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import {
-    Container, H1, Wrapper, Card, H2, TopLine
-} from './ExperiencesElements';
-import { data } from './data'
-
 import { FaTimes } from 'react-icons/fa';
 
+import { data } from './data'
 import './modal.css'
 
 
@@ -47,18 +43,23 @@ export const ExperiencesSection = () => {
         setIsOpen(false);
       }
     return (
-        <Container id='experiences'>
-            <TopLine>Experiences</TopLine>
-            <H1>Experiences That We're Proud Of</H1>
-            <Wrapper>
+        <div className='experiences-container' id='experiences'>
+            <p className='experiences-up-title-section'>Experiences</p>
+            <h1 className='experiences-title-section'>Experiences That We're Proud Of</h1>
+            <div className='experiences-wrapper'>
                 {
                     data.map( (experience) => 
-                            <Card imageCard={experience.image} onClick={() => openModal(experience.id)} key={experience.id}>
-                                <H2>{experience.title}</H2>
-                            </Card>
+                            <div 
+                                key={experience.id}
+                                className='experiences-card'
+                                style={{ backgroundImage: `url(${experience.image})` }} 
+                                onClick={() => openModal(experience.id)} 
+                            >
+                                <h2 className='experiences-title-card'>{experience.title}</h2>
+                            </div>
                             )
                 }
-            </Wrapper>
+            </div>
 
             <Modal
             isOpen={modalIsOpen}
@@ -71,7 +72,7 @@ export const ExperiencesSection = () => {
               <div className='div-icon-close' onClick={closeModal}> <FaTimes className='icon-close'/></div>
                 <div className="row">
                     <div className="col-12 col-md-7 divImage">
-                        <img src={experience.image} alt='cristo-redentor' className='foto'/>
+                        <img src={experience.image} alt='experiences' className='foto'/>
                     </div>
                     <div className="col-12 col-md-5 divInfo">
                             <h2> {experience.title}</h2>
@@ -84,6 +85,6 @@ export const ExperiencesSection = () => {
                 </div>
           </Modal>
             
-        </Container>
+        </div>
     )
 }
