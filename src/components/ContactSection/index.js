@@ -40,48 +40,66 @@ export const ContactSection = () => {
 
     return (
     <>
-        <div className='container contact-container' id='contact'>
-            <div className='row contact-row' >
-                <div className='col-12 col-md-6 contact-column-1'>
-                    <p className='contact-up-title-section'>Contact</p>
-                    <h1 className='contact-title-section'>Get In Touch</h1>
-                    <p className='contact-text'>Use the contact form for any questions and inquiries.</p>
-                    <p className='contact-text-info'>
-                        <ImLocation className='contact-icon'/>Argentina  -  Peru  -   England
-                        <br/>
-                        <ImWhatsapp className='contact-icon'/> +549 116 483 8366
-                        <br/>
-                        <FaEnvelope className='contact-icon'/> secondlanguagemodeon@gmail.com
-                    </p>
+        <div className='contact_container' id='contact'>
+                <div className='contact_column_1'>
+                    <div className='contact_column_1_wrapper'>
+                        <p className='contact_column_1_section_name section_name'>Contact</p>
+                        <h1 className='contact_column_1_title title'>Get In Touch</h1>
+                        <p className='contact_column_1_description'>Use the contact form for any questions and inquiries.</p>
+                        <p className='contact_column_1_info'>
+                            <ImLocation className='contact_column_1_icon'/>Spain - England - Argentina - Peru
+                            <br/>
+                            <ImWhatsapp className='contact_column_1_icon'/> +549 116 483 8366
+                            <br/>
+                            <FaEnvelope className='contact_column_1_icon'/> secondlanguagemodeon@gmail.com
+                        </p>
+                    </div>
                 </div>
 
-                <div className='col-12 col-md-6 contact-column-2'>
-                    {
-                        !submited 
-                    ?                    
-                        ( 
-                            <form className="contact-form" onSubmit={sendEmail}>
-                                <input className='contact-input' type="text" name="name" placeholder='Name*' value={ name } onChange= { handleInputChange } />
-                                <input className='contact-input' type="text" name="country" placeholder='Country*' value={ country } onChange= { handleInputChange }/>
-                                <input className='contact-input' type="email" name="email" placeholder='Email*' value={ email } onChange= { handleInputChange }/>
-                                <textarea className='contact-textarea' name="message" placeholder='Message*' rows='4' value={ message } onChange= { handleInputChange }/>
-                                <button className='contact-button' type="submit" >Submit message</button>
-                                {
-                                    errors && <small className='contact-error'>*All fields are required</small>
-                                }
-                            </form>
-                        )
-                        
-                    :
-                        <div className='contact-wrapper-img-email'>
-                            <img className='contact-img-email-sent' src={EmailSent} alt='Email sent!'/>
-                            <p className='contact-text-email-sent'>Message sent !</p>                
-                        </div>
-                
-                    }
+                <div className='contact_column_2'>
+                    <div className='contact_column_2_wrapper'>
+                        {
+                            !submited 
+                        ?                    
+                            ( 
+
+                                <form name="contact" method="POST" data-netlify="true" className="contact_column_2_form" >
+                                    <input type="text" name="name" className='contact_column_2_input' placeholder='Name*'/>   
+                                    <input type="text" name="country" className='contact_column_2_input' placeholder='City & Country**'/>   
+                                    <input type="email" name="email" className='contact_column_2_input' placeholder='Email*'/>
+                                    <textarea name="message" className='contact_column_2_textarea' placeholder='Message*' rows='4' ></textarea>
+                                    <button type="submit" className='contact-button'>Submit message</button>
+                                    {
+                                        errors && <small className='contact-error'>*All fields are required</small>
+                                    }
+                                </form>
+
+
+
+
+                                // <form className="contact_column_2_form" onSubmit={sendEmail}>
+                                //     <input className='contact_column_2_input' type="text" name="name" placeholder='Name*' value={ name } onChange= { handleInputChange } />
+                                //     <input className='contact_column_2_input' type="text" name="country" placeholder='City & Country*' value={ country } onChange= { handleInputChange }/>
+                                //     <input className='contact_column_2_input' type="email" name="email" placeholder='Email*' value={ email } onChange= { handleInputChange }/>
+                                //     <textarea className='contact_column_2_textarea' name="message" placeholder='Message*' rows='4' value={ message } onChange= { handleInputChange }/>
+                                //     <button className='contact-button' type="submit" >Submit message</button>
+                                //     {
+                                //         errors && <small className='contact-error'>*All fields are required</small>
+                                //     }
+                                // </form>
+                            )
+                            
+                        :
+                            <div className='contact-wrapper-img-email'>
+                                <img className='contact-img-email-sent' src={EmailSent} alt='Email sent!'/>
+                                <p className='contact-text-email-sent'>Message sent !</p>                
+                            </div>
+                    
+                        }
+
+                    </div>
                 </div>
-            </div>
-        </div>        
+        </div>
     </>
     )
 }

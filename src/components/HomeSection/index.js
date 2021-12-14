@@ -18,12 +18,8 @@ export const HomeSection = () => {
                 <h1 className='home-title'>EXPERIENCES</h1>
     
                     <Button 
-                        className='home-button'
+                        className='button home_button'
                         to='us' 
-                        // onMouseEnter={ onHover } 
-                        // onMouseLeave={ onHover }
-                        primary='true'
-                        dark='true'
                         smooth={true}
                         duration={500}
                         spy={true}

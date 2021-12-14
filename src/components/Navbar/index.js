@@ -22,7 +22,6 @@ export const Navbar = ({ toggle }) => {
         window.addEventListener( 'scroll', changeNav )   
         return () => {
             window.removeEventListener( 'scroll', changeNav );
-
           };   
     }, [])
 
@@ -32,7 +31,7 @@ export const Navbar = ({ toggle }) => {
 
     return (
         <>
-            <nav className={`nav ${scrollNav && 'nav-transparent'}`}>
+            <nav className={`nav ${scrollNav && 'nav_change_background_color'}`}>
                 <div className='nav-container'>                    
                     <LinkRouter to='/' onClick={ toggleHome } className='nav-link-router' > 
                         <img className='nav-logo' src={imgLogo} alt='logo'/>
@@ -50,11 +49,11 @@ export const Navbar = ({ toggle }) => {
                                 exact='true'
                                 offset={-80}
                             >
-                                Us
+                               About Us
                             </LinkScroll>
                         </li>
                         <li className='nav-li'>
-                            <LinkScroll to='discover'
+                            <LinkScroll to='services'
                                 className='nav-li-links' 
                                 smooth={true}
                                 duration={500}
@@ -62,7 +61,7 @@ export const Navbar = ({ toggle }) => {
                                 exact='true'
                                 offset={-80}
                             >
-                                Discover
+                                Services
                             </LinkScroll>
                         </li>
                         <li className='nav-li'>

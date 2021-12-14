@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-scroll';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa' 
 import { animateScroll as scroll } from 'react-scroll';
 import imgLogo from '../../images/logo-blanco.png'
@@ -16,42 +16,10 @@ export const Footer = () => {
     <footer className='footer-container'>
       <div className='footer-wrapper'>
         <div className='footer-links-container'>
-          <div className='footer-links-wrapper'>
-            <div className='footer-links-items'>
-              <h1 className='footer-link-title'>About us</h1>
-              <Link to="/signin" className='footer-link'>How it works</Link>
-              <Link to="/signin" className='footer-link'>Testimonials</Link>
-              <Link to="/signin" className='footer-link'>Careers</Link>
-              <Link to="/signin" className='footer-link'>Investors</Link>
-              <Link to="/signin" className='footer-link'>Terms of Service</Link>
-            </div>
-
-            <div className='footer-links-items'>
-              <h1 className='footer-link-title'>Contact us</h1>
-              <Link to="/signin" className='footer-link'>Contact</Link>
-              <Link to="/signin" className='footer-link'>Support</Link>
-              <Link to="/signin" className='footer-link'>Destinations</Link>
-              <Link to="/signin" className='footer-link'>Spondorships</Link>
-            </div>
-          </div>
-
-          <div className='footer-links-wrapper'>
-            <div className='footer-links-items'>
-              <h1 className='footer-link-title'>Videos</h1>
-              <Link to="/signin" className='footer-link'>Submit Video</Link>
-              <Link to="/signin" className='footer-link'>Ambassadors</Link>
-              <Link to="/signin" className='footer-link'>Agency</Link>
-              <Link to="/signin" className='footer-link'>Influencer</Link>
-            </div>
-
-            <div className='footer-links-items'>
-              <h1 className='footer-link-title'>Social Media</h1>
-              <Link to="/signin" className='footer-link'>instagram</Link>
-              <Link to="/signin" className='footer-link'>Facebook</Link>
-              <Link to="/signin" className='footer-link'>Youtube</Link>
-              <Link to="/signin" className='footer-link'>Twitter</Link>
-            </div>
-          </div>
+            <Link to='us' offset={-80} className='footer-link'>About Us</Link>
+            <Link to='services' offset={-80} className='footer-link'>Services</Link>
+            <Link to='experiences' offset={-80} className='footer-link'>Experiences</Link>
+            <Link to='contact' offset={-80} className='footer-link'>Contact</Link>    
         </div>
         
         <section className='footer-social-media-section'>

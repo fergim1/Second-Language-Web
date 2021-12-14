@@ -26,10 +26,10 @@ export const Sidebar = ({ isOpen, toggle }) => {
               exact='true'
               offset={-80}
             >
-              Us
+              About Us
             </LinkScroll>
 
-            <LinkScroll to="discover" 
+            <LinkScroll to="services" 
               className='sidebar-link-scroll'
               onClick={ toggle }
               smooth={true}
@@ -38,7 +38,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
               exact='true'
               offset={-80}
             >
-              Discover
+              Services
             </LinkScroll>
             
             <LinkScroll to="experiences" 
@@ -60,20 +60,12 @@ export const Sidebar = ({ isOpen, toggle }) => {
               duration={500}
               spy={true}
               exact='true'
-              offset={-90}
+              offset={-80}
             >
               Contact
             </LinkScroll>
 
           </ul>
-        <div className='sidebar-wrapper-button'>
-            <LinkRouter 
-              to='/signin'
-              className='sidebar-button'
-            >
-              Sign In
-            </LinkRouter>
-        </div>
       </div>
     </aside>
   );

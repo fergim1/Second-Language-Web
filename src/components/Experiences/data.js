@@ -15,7 +15,7 @@ import mate from '../../images/experiences/mate.jpg'
 export const data = [
     {
         id: 1,
-        title: 'Rio de Janeiro, Brasil',
+        title: 'Rio de Janeiro',
         image: cristoRedentor,
         description: 'Take this Rio de Janeiro city tour and go over the main tourist attractions of the city. We will learn about the immigration history and explore the most beautiful beaches like Copacabana and Ipanema, so after we can go to the Christ the Redeemer, one of the wonders of the world. Later we will go to the Escadaria Selarón, great mosaic made with tiles from all over the world. This is an art piece made by the Chilean artist Jorge Selarón, in tribute to the Brazilian People. Finally, we will be able to end the tour in the Sugarloaf Mountain.'
     },
@@ -63,7 +63,7 @@ export const data = [
     },
     {
         id: 9,
-        title: 'Buenos Aires, Argentina',
+        title: 'Buenos Aires',
         image: ba,
         description: 'This tour will show you the most vibrant areas of this world renowned capital, including Parliament Square, Trafalgar Square, Piccadilly Circus and the financial district of the City. The tour also glides past eminent structures and attractions such as the well-known London Eye, St Paul’s Cathedral, Buckingham Palace, the unique Tower of London, Big Ben and the Houses of Parliament.'
     },

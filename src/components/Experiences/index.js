@@ -1,28 +1,11 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import { FaTimes } from 'react-icons/fa';
 
 import { data } from './data'
-import './modal.css'
-
-
-const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
-    }
-};
-
-Modal.setAppElement('#root')
-
 
 
 export const ExperiencesSection = () => { 
-    const [modalIsOpen,setIsOpen] = useState(false);
+    const [modalOpen,setModalOpen] = useState(false);
     const [experience, setExperience] = useState({
         id: '',
         title: '',
@@ -36,33 +19,69 @@ export const ExperiencesSection = () => {
 
     const openModal = (id) => {
         setExperience( {...getExperience(data, id)[0]})
-        setIsOpen(true);
+        setModalOpen(true);
+        console.log('modalOpen: ', modalOpen)
     }
 
     const closeModal = () => {
-        setIsOpen(false);
+        setModalOpen(false);
       }
     return (
-        <div className='experiences-container' id='experiences'>
-            <p className='experiences-up-title-section'>Experiences</p>
-            <h1 className='experiences-title-section'>Experiences That We're Proud Of</h1>
-            <div className='experiences-wrapper'>
+        <div className='experiences_container' id='experiences'>
+            <p className='experiences_section_name section_name'>Experiences</p>
+            <h1 className='experiences_title title'>Experiences That We're Proud Of</h1>
+            <div className='experiences_wrapper'>
                 {
                     data.map( (experience) => 
                             <div 
                                 key={experience.id}
-                                className='experiences-card'
-                                style={{ backgroundImage: `url(${experience.image})` }} 
                                 onClick={() => openModal(experience.id)} 
+                                className='experiences_wrapper_card'
                             >
-                                <h2 className='experiences-title-card'>{experience.title}</h2>
+                                <img
+                                    className='experiences_image_card'
+                                    alt=''
+                                    src= { experience.image}
+                                />
+                                <div className='experiences_title_card'>{experience.title}</div>
                             </div>
                             )
                 }
             </div>
 
-            <Modal
-            isOpen={modalIsOpen}
+            { 
+                modalOpen
+                &&
+                <div className='modal_overlay'>
+                    <div className='modal_wrapper'>
+                        <div className='modal_wrapper_icon_close'> 
+                            <FaTimes 
+                                className='modal_icon_close'
+                                onClick={closeModal}
+                            />
+                        </div>
+                        <div className="modal_row">
+                            <div className="modal_column_1">
+                                <img src={experience.image} alt='experiences' className='modal_column_1_image'/>
+                            </div>
+                            <div className="modal_column_2">
+                                    <h2 className='modal_column_2_title'> {experience.title}</h2>
+                                    <p className='modal_column_2_description'> {experience.description} </p>
+                                    <br></br>
+                                    <div className='modal_column_2_wrapper_back_button'>
+                                        <button onClick={closeModal} className='modal_column_2_back_button'> Back</button>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            }
+
+            {/* <Modal
+            isOpen={modalOpen}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Experiences Modal"
@@ -83,7 +102,7 @@ export const ExperiencesSection = () => {
                             </div>
                     </div>
                 </div>
-          </Modal>
+          </Modal> */}
             
         </div>
     )
