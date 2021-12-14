@@ -69,6 +69,7 @@ export const ContactSection = () => {
                                     <input type="text" name="country" className='contact_column_2_input' placeholder='City & Country**'/>   
                                     <input type="email" name="email" className='contact_column_2_input' placeholder='Email*'/>
                                     <textarea name="message" className='contact_column_2_textarea' placeholder='Message*' rows='4' ></textarea>
+                                    <div data-netlify-recaptcha="true"></div>
                                     <button type="submit" className='contact-button'>Submit message</button>
                                     {/* {
                                         errors && <small className='contact-error'>*All fields are required</small>
