@@ -149,7 +149,7 @@ body {
   top: -100%;
 }
 .sidebar_container_is_open {
-  opacity: 100% !important;
+  opacity: 100%;
   top: 0 !important;
 }
 .sidebar_wrapper_icon_close {
