@@ -10,33 +10,33 @@ import { useForm } from '../../hooks/useForm';
 export const ContactSection = () => {
     const [submited, setSubmited] = useState(false);    
     const [errors, setErrors] = useState(false);
-    const [ formValues, handleInputChange ] = useForm ({
-        name: '',
-        country: '',
-        email: '',
-        message: ''
-    })
+    // const [ formValues, handleInputChange ] = useForm ({
+    //     name: '',
+    //     country: '',
+    //     email: '',
+    //     message: ''
+    // })
 
-    const { name, country, email, message } = formValues
+    // const { name, country, email, message } = formValues
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        if ( name.trim().length === 0 || country.trim().length === 0 || email.trim().length === 0 || message.trim().length === 0 ) {
-            return setErrors(true)
-        }
-        else {
-            setErrors(false)
-        }
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
+    //     if ( name.trim().length === 0 || country.trim().length === 0 || email.trim().length === 0 || message.trim().length === 0 ) {
+    //         return setErrors(true)
+    //     }
+    //     else {
+    //         setErrors(false)
+    //     }
 
-        emailjs.sendForm('gmail', 'form-contact', e.target, 'user_EjcujjhQDgaFRw2VPotqN' )
-          .then((result) => {
-              if(result.text){
-                  setSubmited(true) 
-              }
-          }, (error) => {
-              console.log(error.text);
-          });
-    }
+    //     emailjs.sendForm('gmail', 'form-contact', e.target, 'user_EjcujjhQDgaFRw2VPotqN' )
+    //       .then((result) => {
+    //           if(result.text){
+    //               setSubmited(true) 
+    //           }
+    //       }, (error) => {
+    //           console.log(error.text);
+    //       });
+    // }
 
     return (
     <>
@@ -63,15 +63,16 @@ export const ContactSection = () => {
                         ?                    
                             ( 
 
-                                <form name="contact" method="POST" data-netlify="true" className="contact_column_2_form" >
+                                <form name="contact" method="post" className="contact_column_2_form" >
+                                    <input type="hidden" name="form-name" value="contact" />
                                     <input type="text" name="name" className='contact_column_2_input' placeholder='Name*'/>   
                                     <input type="text" name="country" className='contact_column_2_input' placeholder='City & Country**'/>   
                                     <input type="email" name="email" className='contact_column_2_input' placeholder='Email*'/>
                                     <textarea name="message" className='contact_column_2_textarea' placeholder='Message*' rows='4' ></textarea>
                                     <button type="submit" className='contact-button'>Submit message</button>
-                                    {
+                                    {/* {
                                         errors && <small className='contact-error'>*All fields are required</small>
-                                    }
+                                    } */}
                                 </form>
 
 

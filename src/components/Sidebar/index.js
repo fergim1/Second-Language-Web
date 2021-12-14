@@ -8,6 +8,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
   return (
     <aside 
       className={`sidebar_container ${isOpen && 'sidebar_container_is_open'}`}
+      open={ isOpen } 
       onClick={ toggle }
     >
       <div className='sidebar_wrapper_icon_close' onClick={ toggle }>
