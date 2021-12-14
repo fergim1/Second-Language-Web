@@ -1,5 +1,6 @@
 import React from "react";
-import { Link as Button } from "react-scroll";
+
+
 
 export const UsSection = () => {
   return (
@@ -23,19 +24,6 @@ export const UsSection = () => {
               de arena para romper la barrera idiomática , aportando un
               complemento para quienes enseñan un idioma.
             </p>
-            {/* <div className="us_column_1_wrapper_button">
-              <Button
-                className="button"
-                to="services"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                See Services
-              </Button>
-            </div> */}
           </div>
         </div>
 

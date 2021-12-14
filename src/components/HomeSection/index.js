@@ -6,19 +6,19 @@ import {Link as Button} from 'react-scroll';
 export const HomeSection = () => {
 
     return (
-        <div className='home-container' id='home'>
+        <div className='home_container' id='home'>
             
-            <div className='home-background'>
-                <img className='home-image-background' src={ imgBackground } alt='home-backgrond' />
+            <div className='home_background'>
+                <img className='home_image_background' src={ imgBackground } alt='home_backgrond' />
             </div>    
 
-            <div className='home-content'>
+            <div className='home_content'>
 
-                <p className='home-up-title'>VIRTUAL LIVE</p>
-                <h1 className='home-title'>EXPERIENCES</h1>
+                <p className='home_up_title'>VIRTUAL LIVE</p>
+                <h1 className='home_title'>EXPERIENCES</h1>
     
                     <Button 
-                        className='button home_button'
+                        className='home_button button'
                         to='us' 
                         smooth={true}
                         duration={500}

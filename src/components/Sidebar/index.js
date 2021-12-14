@@ -1,24 +1,22 @@
 import React from "react";
 import { FaTimes } from 'react-icons/fa';
 import { Link as LinkScroll } from 'react-scroll';
-import { Link as LinkRouter } from 'react-router-dom';
 
 
 
 export const Sidebar = ({ isOpen, toggle }) => {
   return (
     <aside 
-      className={`sidebar-container ${isOpen && 'sidebar-container-is-open'}`}
-      isOpen={ isOpen } 
+      className={`sidebar_container ${isOpen && 'sidebar_container_is_open'}`}
       onClick={ toggle }
     >
-      <div className='sidebar-wrapper-icon-close' onClick={ toggle }>
-        <FaTimes className='sidebar-icon-close' />
+      <div className='sidebar_wrapper_icon_close' onClick={ toggle }>
+        <FaTimes className='sidebar_icon_close' />
       </div>
-      <div className='sidebar-wrapper'>
-          <ul className='sidebar-menu-ul'>
+      <div className='sidebar_wrapper'>
+          <ul className='sidebar_menu_ul'>
             <LinkScroll to="us" 
-              className='sidebar-link-scroll'
+              className='sidebar_link_scroll'
               onClick={ toggle }
               smooth={true}
               duration={500}
@@ -30,7 +28,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
             </LinkScroll>
 
             <LinkScroll to="services" 
-              className='sidebar-link-scroll'
+              className='sidebar_link_scroll'
               onClick={ toggle }
               smooth={true}
               duration={500}
@@ -42,7 +40,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
             </LinkScroll>
             
             <LinkScroll to="experiences" 
-              className='sidebar-link-scroll'
+              className='sidebar_link_scroll'
               onClick={ toggle }
               smooth={true}
               duration={500}
@@ -54,7 +52,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
             </LinkScroll>
 
             <LinkScroll to="contact" 
-              className='sidebar-link-scroll'
+              className='sidebar_link_scroll'
               onClick={ toggle }
               smooth={true}
               duration={500}

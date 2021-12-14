@@ -32,17 +32,17 @@ export const Navbar = ({ toggle }) => {
     return (
         <>
             <nav className={`nav ${scrollNav && 'nav_change_background_color'}`}>
-                <div className='nav-container'>                    
-                    <LinkRouter to='/' onClick={ toggleHome } className='nav-link-router' > 
-                        <img className='nav-logo' src={imgLogo} alt='logo'/>
+                <div className='nav_container'>                    
+                    <LinkRouter to='/' onClick={ toggleHome } className='nav_link_router' > 
+                        <img className='nav_logo' src={imgLogo} alt='logo'/>
                     </LinkRouter>
-                    <div className='nav-div-icon-menu' onClick={ toggle }>
+                    <div className='nav_div_icon_menu' onClick={ toggle }>
                         <FaBars/>
                     </div>
-                    <ul className='nav-ul'>
-                        <li className='nav-li'>
+                    <ul className='nav_ul'>
+                        <li className='nav_li'>
                             <LinkScroll to='us'
-                                className='nav-li-links' 
+                                className='nav_li_links' 
                                 smooth={true}
                                 duration={500}
                                 spy={true}
@@ -52,9 +52,9 @@ export const Navbar = ({ toggle }) => {
                                About Us
                             </LinkScroll>
                         </li>
-                        <li className='nav-li'>
+                        <li className='nav_li'>
                             <LinkScroll to='services'
-                                className='nav-li-links' 
+                                className='nav_li_links' 
                                 smooth={true}
                                 duration={500}
                                 spy={true}
@@ -64,9 +64,9 @@ export const Navbar = ({ toggle }) => {
                                 Services
                             </LinkScroll>
                         </li>
-                        <li className='nav-li'>
+                        <li className='nav_li'>
                             <LinkScroll to='experiences'
-                                className='nav-li-links' 
+                                className='nav_li_links' 
                                 smooth={true}
                                 duration={500}
                                 spy={true}
@@ -76,9 +76,9 @@ export const Navbar = ({ toggle }) => {
                                 Experiences
                             </LinkScroll>
                         </li>
-                        <li className='nav-li'>
+                        <li className='nav_li'>
                             <LinkScroll to='contact'
-                                className='nav-li-links' 
+                                className='nav_li_links' 
                                 smooth={true}
                                 duration={500}
                                 spy={true}
@@ -90,12 +90,12 @@ export const Navbar = ({ toggle }) => {
                         </li>
                     </ul>
                     <a 
-                        className='nav-link-instagram' 
+                        className='nav_link_instagram' 
                         href='https://www.instagram.com/secondlanguage.modeon/' 
                         target='_blank'
                         rel="noreferrer"
                     >
-                       <RiInstagramFill className='nav-instagram-icon'/>
+                       <RiInstagramFill className='nav_instagram_icon'/>
                     </a>
                 </div>
             </nav>
